@@ -18,8 +18,9 @@ https://github.com/BenD780x9/Klipper-for-Ender_3_v2
   - 0.4mm brass tips
   - capricorn PTFE upgrade
 - BLTouch probe 3.1
+- Adding on [klipper screen](https://klipperscreen.readthedocs.io/en/latest/Installation/#manual-install) as a dekstop manager (pref. wayland & standalone)
 
-
+sta
 ## Bought Hardware
 - Waveshare 4.3" ~490sek ([or other supported by KlipperScreen](https://klipperscreen.readthedocs.io/en/latest/Hardware/))
 
