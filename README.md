@@ -62,9 +62,18 @@ Instructions here- https://github.com/BenD780x9/Klipper-for-Ender_3_v2?tab=readm
 
 #### 4. How do i calibrate the funky screw thingies on the printbed? / How do level my bed?
 
-With BlTouch the easiest way imo. is to use the mainsail interface. Click calibrate under the toolhead settings.
-With a console refer to - https://www.klipper3d.org/Probe_Calibrate.html
-There is an old manual way involving paper which is relevant if you dont have the BlTouch sensor.
+With BLTouch the easiest path is to use the Mainsail macro buttons / console and keep the calibration flow explicit:
+
+1. `LEVEL_BED` - runs `SCREWS_TILT_CALCULATE` so you can adjust the four bed screws first.
+2. `CALIBRATE_Z` - runs `PROBE_CALIBRATE` for the BLTouch Z offset. Finish with `ACCEPT` and `SAVE_CONFIG`.
+3. `CALIBRATE_MESH T=<bed_temp>` - rebuilds the default bed mesh. Finish with `SAVE_CONFIG` to persist it.
+4. `LOAD_MESH` - loads the saved mesh manually, while the normal `START_PRINT*` macros also load it before printing.
+
+For the detailed Klipper flow refer to:
+- https://www.klipper3d.org/Probe_Calibrate.html
+- https://www.klipper3d.org/BLTouch.html
+
+There is an old manual way involving paper which is relevant if you dont have the BLTouch sensor.
 
 #### 5. Wierd stuff happening to extrude rates.
 
